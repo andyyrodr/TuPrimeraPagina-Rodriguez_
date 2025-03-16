@@ -3,7 +3,7 @@ from core import views
 
 
 urlpatterns = [
-     path("index/", views.index, name='index'),
+     path("", views.index, name='index'),
     path('estudiantes/', views.lista_estudiantes, name='lista_estudiantes'),
     path('estudiantes/<int:pk>/', views.detalle_estudiante, name='detalle_estudiante'),
     path('profesores/', views.lista_profesores, name='lista_profesores'),

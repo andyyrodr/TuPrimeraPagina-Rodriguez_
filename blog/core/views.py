@@ -21,5 +21,11 @@ def lista_cursos(request):
     cursos = Curso.objects.all()
     return render(request, 'core/cursos_list.html', {'cursos': cursos})
 
+def detalle_cursos(request, pk):
+    curso = get_object_or_404(Profesor, pk=pk)
+    return render(request, 'core/curso_detail.html', {'curso': curso})
+
+
 def index(request):
     return render(request, 'core/index.html')
+

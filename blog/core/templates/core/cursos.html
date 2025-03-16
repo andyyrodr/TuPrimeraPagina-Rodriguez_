@@ -1,0 +1,14 @@
+{% extends 'core/base.html'%}
+
+{%block title%}
+Cursos
+{% endblock title %}
+
+{% block content_title %}
+   listado de cursos
+{% endblock content_title %}
+<ul>
+    {% for Curso in lista_cursos%}
+    <li><a href="{% url 'detalle_cursos' estudiante.id %}">{{estudiante.nombre}}</a></li>
+    {% endfor %}
+{% block content %}
