@@ -3,20 +3,23 @@ from .models import Curso, Profesor, Estudiante
 
 def lista_estudiantes(request):
     estudiantes = Estudiante.objects.all()
-    return render(request, 'Core/estudiantes_list.html', {'estudiantes': estudiantes})
+    return render(request, 'core/estudiantes_list.html', {'estudiantes': estudiantes})
 
 def detalle_estudiante(request, pk):
     estudiante = get_object_or_404(Estudiante, pk=pk)
-    return render(request, 'Core/estudiante_detail.html', {'estudiante': estudiante})
+    return render(request, 'core/estudiante_detail.html', {'estudiante': estudiante})
 
 def lista_profesores(request):
     profesores = Profesor.objects.all()
-    return render(request, 'Core/profesores_list.html', {'profesores': profesores})
+    return render(request, 'core/profesores_list.html', {'profesores': profesores})
 
 def detalle_profesor(request, pk):
     profesor = get_object_or_404(Profesor, pk=pk)
-    return render(request, 'Core/profesor_detail.html', {'profesor': profesor})
+    return render(request, 'core/profesor_detail.html', {'profesor': profesor})
 
 def lista_cursos(request):
     cursos = Curso.objects.all()
-    return render(request, 'Core/cursos_list.html', {'cursos': cursos})
+    return render(request, 'core/cursos_list.html', {'cursos': cursos})
+
+def index(request):
+    return render(request, 'core/index.html')
